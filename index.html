@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halo Andini!</title>
+</head>
+<style>
+    @font-face{
+        font-family: itim;
+        src: url(Itim-Regular.ttf);
+    }
+
+    *{
+        color: white;
+        margin: 0%;
+        padding: 0%;
+    }
+    html{
+        background-color: #00032B;
+        width: 100%;
+        height: 100%;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .wrap{
+        display: flex;
+        width: 100%;
+        height: 50vw;
+        position: relative;
+    }
+    .text{
+        width: 100%;
+        height: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .text h1{
+        font-family: itim;
+        width: 100%;
+        font-size: 8.5vw;
+        text-align: center;
+    }
+    .text p{
+        width: 60%;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 2vw;
+        
+    }
+    #left{
+        width: 5vw;
+        position: absolute;
+        top: 30%;
+        right: 24%;
+        transform: rotate(45deg);
+    }
+    #right{
+        width: 5vw;
+        position: absolute;
+        top: 30%;
+        left: 24%;
+        transform: rotate(-45deg);
+    }
+    #book{
+        width: 10vw;
+        position: absolute;
+        left: 8%;
+        bottom: 9%;
+        transform: rotate(10deg);
+    }
+    #chicken{
+        width: 10vw;
+        position: absolute;
+        right: 8%;
+        bottom: 9%;
+    }
+    .prank{
+        width: 100%;
+        height: 100%;
+        background-color: #00032B;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        font-size: 2vw;
+        font-family: sans-serif;
+        z-index: 2;
+        transition-duration: 1s;
+    }
+    .prank button{
+        width: 15vw;
+        height: 5vw;
+        min-width: 100px;
+        min-height: 31px;
+        background-color: #00032B;
+        border: 0.3vw solid rgb(0, 140, 255);
+        border-radius: 25px;
+        font-size: 1.5vw;
+
+        transition-duration: 0.1s;
+    }
+    .prank button:hover{
+        background-color: rgb(0, 140, 255);;
+    }
+    #one{
+        display: block;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+    }
+    #two{
+        display: none;
+        position: absolute;
+        top: 10%;
+        left: 10%
+    }
+    #three{
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 15%;
+    }
+    .prank div{
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .prank div p{
+        margin-bottom: 2vw;
+    }
+    @media  screen and (max-width: 678px) {
+        .prank button{
+            border: 2.5px solid rgb(0, 140, 255);
+            border-radius: 25px;
+            font-size: 10px;
+        }
+        .prank div p{
+            font-size: 12px;
+        }
+    }
+
+</style>
+<body>
+    <div class="prank">
+        <button id="one" onclick="satu()">Coba tekan ini</button>
+        <button id="two" onclick="dua()">Lalu ini</button>
+        <button id="three" onclick="tiga()">Ini</button>
+        <div>
+            <p>Nurut ya kamu. Terakhir deh.</p>
+            <button id="four" onclick="empat()">tekan ini</button>
+        </div>
+    </div>
+    <div class="wrap">
+        <img id="left" src="left.png" alt="quotes left">
+        <img id="right" src="right.png" alt="quotes right">
+        <img id="book" src="book.png" alt="book">
+        <img id="chicken" src="chicken.png" alt="chicken">
+        <div class="text">
+            <h1>SEMANGAT</h1>
+            <p>Aku tau kamu sanggup An. Tapi jangan lupa jaga kesehatan dan istirahat ya.</p>
+        </div>
+    </div>
+</body>
+<script>
+    const btn1 = document.getElementById("one");
+    const btn2 = document.getElementById("two");
+    const btn3 = document.getElementById("three");
+    const prank = document.querySelector(".prank");
+    const wrap = prank.getElementsByTagName("div")[0];
+
+    function satu(){
+        btn1.style.display = "none";
+        btn2.style.display = "block";
+    }
+
+    function dua(){
+        btn2.style.display = "none";
+        btn3.style.display = "block";
+    }
+
+    function tiga(){
+        btn3.style.display = "none";
+        wrap.style.display = "flex";
+    }
+
+    function empat(){
+
+        prank.style.top = "-100%";
+    }
+
+</script>
+</html>
